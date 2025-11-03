@@ -5,6 +5,10 @@ export const metadata = {
   description: 'App anti-procrastinación — notificaciones y campanita',
 }
 
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/sw.js").catch(console.error);
+}
+
 export default function RootLayout({ children }) {
   return (
     <html lang="es">

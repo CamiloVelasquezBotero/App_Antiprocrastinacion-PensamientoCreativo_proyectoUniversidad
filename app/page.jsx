@@ -85,6 +85,14 @@ export default function Page() {
                 body: `${task.title} — Es momento de cumplirla ⏰`,
                 silent: false
               })
+
+              navigator.serviceWorker.ready.then(reg => {
+                reg.showNotification("¡Hora de tu tarea!", {
+                  body: `${task.title} — Es momento de cumplirla ⏰`,
+                  icon: "/icon-192.png",
+                  vibrate: [200, 100, 200],
+                });
+              });
             } catch(e){ }
           }
           playSound()
