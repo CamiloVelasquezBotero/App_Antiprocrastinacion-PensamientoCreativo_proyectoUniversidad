@@ -249,6 +249,22 @@ body {
     }
 
     .main-panel {
-        order: 1
+        order: 1;
+    }
+}
+
+@media(max-width:428px) {
+    .main-panel {
+        order: 1;
+        max-width: 428px;
+    }
+    .header {
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+
+    }
+    .task-form {
+        display: block;
     }
 }
