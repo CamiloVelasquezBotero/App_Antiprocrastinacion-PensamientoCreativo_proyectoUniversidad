@@ -94,8 +94,9 @@ export default function Page() {
                 });
               });
             } catch(e){ }
+            playSound()
+            alert(`${task.title}: ¡Hora de tu tarea!`)
           }
-          playSound()
           markNotified(task.id)
         }
       })
