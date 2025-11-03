@@ -5,4 +5,4 @@ App Organizador de tareas.
 Creada para proyecto de universidad
 
 ## Preview: 
-    https://app-antiprocrastinacion-pensamiento.vercel.app/
+    https://pensamientocreativo-antiprocrastinacion.vercel.app/
