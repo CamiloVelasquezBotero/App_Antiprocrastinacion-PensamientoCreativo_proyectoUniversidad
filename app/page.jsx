@@ -97,7 +97,10 @@ export default function Page() {
           }
           playSound()
           markNotified(task.id)
-          alert(`${task.title}: ¡Hora de tu tarea!`)
+          
+          if (typeof navigator === "undefined") {
+            alert(`${task.title}: ¡Hora de tu tarea!`)
+          }
         }
       })
     }
@@ -132,7 +135,7 @@ export default function Page() {
       <main className="main-panel">
         <div className="header">
           <div>
-            <h2>Administrador de Tareas</h2>
+            <h2>Administrador de Tareas - Pensamiento Creativo</h2>
             <div className="subtitle">Organiza por fecha y hora — Recibirás alertas cuando toque</div>
           </div>
 
