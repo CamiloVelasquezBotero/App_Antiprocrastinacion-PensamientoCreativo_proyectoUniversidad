@@ -96,11 +96,8 @@ export default function Page() {
             } catch(e){ }
           }
           playSound()
-          markNotified(task.id)
-          
-          if (typeof navigator === "undefined") {
-            alert(`${task.title}: ¡Hora de tu tarea!`)
-          }
+          markNotified(task.id)      
+          alert(`¡Hora de tu tarea`)
         }
       })
     }
