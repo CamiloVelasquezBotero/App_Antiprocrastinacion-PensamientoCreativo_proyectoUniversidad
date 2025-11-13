@@ -1,5 +1,5 @@
 {
-  "name": "my-task-app",
+  "name": "app_antiprocrastinacion",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -8,8 +8,31 @@
     "start": "next start -p 3000"
   },
   "dependencies": {
+    "@prisma/client": "^6.19.0",
+    "framer-motion": "^12.23.24",
     "next": "14.1.0",
+    "prisma": "^6.19.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
-  }
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "@types/react": "19.2.4",
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17",
+    "typescript": "5.9.3"
+  },
+  "description": "App Organizador de tareas.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CamiloVelasquezBotero/App_Antiprocrastinacion-PensamientoCreativo_proyectoUniversidad.git"
+  },
+  "author": "Camilo Velasquez Botero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CamiloVelasquezBotero/App_Antiprocrastinacion-PensamientoCreativo_proyectoUniversidad/issues"
+  },
+  "homepage": "https://github.com/CamiloVelasquezBotero/App_Antiprocrastinacion-PensamientoCreativo_proyectoUniversidad#readme"
 }

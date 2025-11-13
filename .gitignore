@@ -2,3 +2,6 @@ node_modules/
 .next/
 dist/
 .env
+/app/generated/prisma
+
+/app/generated/prisma

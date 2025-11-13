@@ -1,10 +1,10 @@
 "use client"
-
 import { useEffect, useState } from "react"
 import TaskForm from "../components/TaskForm"
 import TaskList from "../components/TaskList"
 import CalendarSidebar from "../components/CalendarSidebar"
 import { loadTasks, saveTasks } from "../utils/storage"
+import { useRouter } from "next/navigation"
 
 export default function Page() {
   const [tasks, setTasks] = useState([])
@@ -12,12 +12,12 @@ export default function Page() {
     const d = new Date()
     return d.toISOString().slice(0,10) // YYYY-MM-DD
   })
+  const router = useRouter()
 
   // Guardar tareas cuando cambie Task
   useEffect(() => {
     if(tasks.length) {
       saveTasks(tasks)
-      console.log('Guardado con useEffect')
     }
   }, [tasks])
 
@@ -127,6 +127,11 @@ export default function Page() {
         <div style={{marginTop:14}}>
           <div className="small">Tareas totales: <strong>{tasks.length}</strong></div>
         </div>
+
+        <button 
+          className='button-foro'
+          onClick={() => router.push('/forum-comments')}
+        >💬 Comenta en nuestro Foro</button>
       </aside>
 
       <main className="main-panel">
