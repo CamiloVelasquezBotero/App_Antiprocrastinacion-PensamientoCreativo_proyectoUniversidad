@@ -16,43 +16,50 @@ export default function ForumPage() {
   const [comment, setComment] = useState('');
   const router = useRouter()
 
+  const fetchComments = async () => {
+    try {
+      const res = await fetch("/forum-comments/api")
+      const data = await res.json()
+      setComments(data)
+    } catch (error) {
+      console.log('Error al hacer el fetch')
+    }
+  }
+
   useEffect(() => {
-      const fetchComments = async () => {
-        const res = await fetch("/forum-comments/api")
-        const data = await res.json()
-        setComments(data)
-      }
-      fetchComments()
+    fetchComments()
   }, [])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !comment.trim()) return;
+    if (!name.trim() || !comment.trim()) return alert('¡Los campos no pueden ir vacios!');
 
-    createComment({name, comment})
 
     const newComment: Comment = {
-      id: Date.now(),
+      id: Number(Date.now()),
       name,
       comment,
     };
-
     setComments([newComment, ...comments]);
+
+    // Create comment en DB
+    await createComment({ name, comment })
     setName('');
     setComment('');
+
   };
 
   return (
     <>
       <div className='button-header'>
-        <button 
+        <button
           className='button-back'
           onClick={() => router.push('/')}
         >⬅️ Volver a la app</button>
       </div>
 
       <main className="forum-container">
-        
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
