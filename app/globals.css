@@ -26,13 +26,12 @@ body {
     color: #e6f2ff;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    padding: 18px;
 }
 
 /* Layout */
 .app-shell {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 50px auto;
     display: grid;
     grid-template-columns: 260px 1fr;
     gap: 20px;
